@@ -32,11 +32,12 @@ x, y, and z. It can differentiate between them automatically.
 Installing
 ==========
 
-Standard GNU Autoconf based installation:
+cmake based installation:
 
-./configure
+cd build
+cmake ..
 make
-sudo make install
+sudo make install (optional)
 
 Running
 =======
@@ -57,6 +58,10 @@ Libraries
 Terca Grapher uses muparser and KGraph libraries.
 Licenses for these can be found in MUPARSER_LICENSE
 and KGRAPH_LICENSE respectively.
+
+Terca Grapher also uses the Terca C++ Vector library.
+This library can be found on the TercaTech Github
+near this program.
 
 Documentation
 =============
