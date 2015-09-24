@@ -117,10 +117,10 @@ void grapher3d::processAll(int xmin, int xmax, int ymin, int ymax, int zmin, int
 				zvar = ziter;
 
 				if(abs(leftParser.Eval() - rightParser.Eval()) <= abs(rightParser.Eval()) || (abs(leftParser.Eval() - rightParser.Eval()) <= abs(leftParser.Eval()))){
-					for(xvar = xiter - 16; xvar < xiter + 16; xvar += 0.05){
-						for(yvar = yiter - 16; yvar < yiter + 16; yvar += 0.05){
-							for(zvar = ziter - 16; zvar < ziter + 16; zvar += 0.05){
-								if(abs(leftParser.Eval() - rightParser.Eval()) < 0.05){
+					for(xvar = xiter - 16; xvar < xiter + 16; xvar += 0.5){
+						for(yvar = yiter - 16; yvar < yiter + 16; yvar += 0.5){
+							for(zvar = ziter - 16; zvar < ziter + 16; zvar += 0.5){
+								if(abs(leftParser.Eval() - rightParser.Eval()) < 1){
 									points.push_back(ctvector(xvar, yvar, zvar));
 								}
 							}

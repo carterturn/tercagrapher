@@ -55,7 +55,10 @@ int main(int argc, char* argv[]){
 		if(equation[i] == 'z') threed = true;
 	}
 
-	if(threed) grapheng = new grapher3d(argv[1]);
+	if(threed){
+		cout << "Creating 3D graph\n";
+		grapheng = new grapher3d(argv[1]);
+	}
 	else grapheng = new grapher2d(argv[1]);
 
 	glfwInit();
@@ -75,7 +78,7 @@ int main(int argc, char* argv[]){
 
 	chrono::high_resolution_clock::time_point before = chrono::high_resolution_clock::now();
 	
-	grapheng->process(-10, 10, -10, 10, -10, 10);
+	grapheng->process(-200, 200, -200, 200, -200, 200);
 
 	chrono::high_resolution_clock::time_point after = chrono::high_resolution_clock::now();
 
@@ -106,7 +109,7 @@ int main(int argc, char* argv[]){
 		for(int i = 0; i < points.size(); i++){
 			glBegin(GL_POINTS);
 
-			glColor3f(0.0f, 1.0f, ((float) points[i].z) / 10.0f);
+			glColor3f(0.0f, 1.0f, ((float) ((int) abs(points[i].z) % 100)) / 100.0f);
 
 			glVertex3i(points[i].x, points[i].y, points[i].z);
 
