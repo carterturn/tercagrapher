@@ -84,8 +84,6 @@ int main(int argc, char* argv[]){
 
 	cout << chrono::duration_cast<chrono::duration<double>>(after - before).count() << "\n";
 	
-	vector<ctvector> points = grapheng->getVectors();
-
 	while(true){
 		glClear(GL_COLOR_BUFFER_BIT);
 
@@ -105,20 +103,9 @@ int main(int argc, char* argv[]){
 		glColor3f(0.0f, 1.0f, 0.0f);
 		
 		before = chrono::high_resolution_clock::now();
+
+		grapheng->drawVectors();
 		
-		for(int i = 0; i < points.size(); i++){
-			glBegin(GL_POINTS);
-
-			glColor3f(0.0f, 1.0f, ((float) ((int) abs(points[i].z) % 100)) / 100.0f);
-
-			glVertex3i(points[i].x, points[i].y, points[i].z);
-
-			glEnd();
-
-//			points[i].rotate(0.0f, 0.1f, 0.0f);
-
-		}
-
 		after = chrono::high_resolution_clock::now();
 
 		cout << chrono::duration_cast<chrono::duration<double>>(after - before).count() << "\n";

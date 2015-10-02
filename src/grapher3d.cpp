@@ -136,4 +136,3 @@ vector<ctvector> grapher3d::getVectors(){
 	return points;
 }
 
-void grapher3d::drawVectors(){}

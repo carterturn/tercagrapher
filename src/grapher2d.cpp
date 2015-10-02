@@ -104,7 +104,3 @@ void grapher2d::processAll(int xmin, int xmax, int ymin, int ymax){
 vector<ctvector> grapher2d::getVectors(){
 	return points;
 }
-
-void grapher2d::drawVectors(){
-
-}

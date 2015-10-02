@@ -20,6 +20,9 @@
 #include "grapher.h"
 
 #include <algorithm>
+#ifdef DRAW_VECTORS
+#include <GL/gl.h>
+#endif
 
 using namespace std;
 
@@ -36,4 +39,19 @@ grapher::grapher(string expr){
 
 	leftParser.SetExpr(leftExpr);
 	rightParser.SetExpr(rightExpr);
+}
+
+void grapher::drawVectors(){
+
+	#ifdef DRAW_VECTORS
+	glBegin(GL_POINTS);
+	
+	for(int i = 0; i< points.size(); i++){
+		glVertex3i(points[i].x, points[i].y, points[i].z);
+	}
+
+	glEnd();
+
+	#endif
+
 }

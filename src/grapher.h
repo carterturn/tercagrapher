@@ -23,6 +23,8 @@
 #include <ctvector.h>
 #include <muParser.h>
 
+#define DRAW_VECTORS
+
 struct ctline{
 	ctvector point1;
 	ctvector point2;
@@ -35,7 +37,7 @@ public:
 	virtual void process(int xmin, int xmax, int ymin, int ymax, int zmin, int zmax)=0;
 	
 	virtual std::vector<ctvector> getVectors()=0;
-	virtual void drawVectors()=0;
+	virtual void drawVectors();
 
 protected:
 	std::vector<ctvector> points;

@@ -29,7 +29,6 @@ public:
 	void process(int xmin, int xmax, int ymin, int ymax, int zmin, int zmax);
 
 	std::vector<ctvector> getVectors();
-	void drawVectors();
 
 private:
 	void processX(int xmin, int xmax, int ymin, int ymax);
