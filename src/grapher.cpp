@@ -44,6 +44,8 @@ grapher::grapher(string expr){
 void grapher::drawVectors(){
 
 	#ifdef DRAW_VECTORS
+	glColor3f(0.0f, 1.0f, 0.0f);
+	
 	glBegin(GL_POINTS);
 	
 	for(int i = 0; i< points.size(); i++){
