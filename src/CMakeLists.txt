@@ -1,5 +1,5 @@
 #Local libraries
-add_executable(tercagrapher main.cpp grapher.cpp grapher.h grapher2d.cpp grapher2d.h grapher3d.cpp grapher3d.h)
+add_executable(tercagrapher main.cpp grapher.cpp grapher.h grapher2d.cpp grapher2d.h grapher3d.cpp grapher3d.h window.cpp window.h graphwindow.cpp graphwindow.h equwindow.cpp equwindow.h)
 
 #ctvector TODO: make platform independant
 include_directories(/usr/include/ctvector)

@@ -17,34 +17,17 @@
   along with Terca Grapher.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <iostream>
-#include <unistd.h>
+#pragma once
 
-#include <chrono>
+#include "window.h"
+#include "grapher.h"
 
-#include <GL/gl.h>
-#include <GLFW/glfw3.h>
+class graphwindow : public window {
+public:
+	graphwindow(std::string equation, std::string title, int xsize, int ysize);
+	~graphwindow();
 
-#include <muParser.h>
-
-#include "graphwindow.h"
-#include "equwindow.h"
-
-using namespace std;
-
-int main(int argc, char* argv[]){
-
-	string equation = argv[1];
-
-	graphwindow gwindow(equation, "Graph", 640, 480);
-	equwindow ewindow("Equations", 120, 480);
-
-	glfwInit();
-	
-	while(true){
-		gwindow.draw();
-		ewindow.draw();
-	}
-
-	glfwTerminate();
-}
+	void draw();
+private:
+	grapher * grapheng;
+};
